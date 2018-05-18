@@ -1,0 +1,235 @@
+/*
+    Author Leandro.Zambelli@yahoo.com
+ */
+
+
+@import url(https://fonts.googleapis.com/css?family=Federo);
+
+body { overflow-x: hidden !important }
+
+
+/* =BOOTSTRAP RESET
+ */
+
+.btn { padding:15px 50px 16px 50px; font-family: sans-serif;  }
+.btn-sm, .btn-group-sm > .btn { padding: 9px 35px 10px 35px; font-size: 0.875rem; }
+
+.btn-primary{background-color: hsl(243 49% 37%); border-color: hsl(243 49% 37%)}
+.btn-primary:hover{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 30%)}
+.btn-primary:focus, .btn-primary.focus{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 47%)}
+.btn-primary:active, .btn-primary.active{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 47%)}
+
+
+/* =ANIMATION
+*/
+
+.animated { animation-duration: 1s; animation-fill-mode: both; }
+.fadeIn { animation-name: fadeIn; }
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* =CLASSES
+ */
+
+.push-down-5 { margin-top: 5px } /* Usado pra alinhar o a img do header com o logo */
+
+.text-white { color: #fff }
+.text-blue { color: #292d96 }
+
+.centralized-img { position: absolute; top:50%; margin-top: -120px} /* centraliza a foto da pagina inicial com o texto */
+
+.bg-gradient { background: linear-gradient(145deg, #31349a 0%,#e0b0f9 100%) } /* bg usado nos titulos */
+.bg-blue { background: #292d96 } /* bg-usado no header */
+
+.line { height: 1px; width: 70px; margin:10px auto 83px auto } /* linha usada embaixo dos titulos */
+
+.padding-header { padding-top: 56px; padding-bottom: 36px; } /* usado para dar espaco ao header */
+.padding-title { padding-top: 38px; padding-bottom: 38px; } /* usado para dar espaco ao banner e titulo */
+.padding-content { padding-top: 84px; padding-bottom: 84px; } /* usado para dar espaco ao conteudo */
+.no-padding { padding: 0 }
+
+.space { margin-top: 126px } /* cria espaco entre rows */
+
+@media (max-width:767px){
+    .space { margin-top: 84px }
+}
+
+.relative { position: relative }
+.absolute { position: absolute }
+
+@media (max-width:1199px){
+    .icon-banner { top: -20px } /* icone usado no baner do index para alinhar pra fora do container */
+}
+
+@media (max-width:991px){
+    .icon-banner { top: 14px } /* icone usado no baner do index para alinhar pra fora do container */
+}
+
+.back-top {
+    font-size: 2em;
+    position:fixed;
+    bottom:0;
+    right:0;
+    padding:9px 25px 0px 27px;
+    background:#ddd;
+    color:#838383;
+    border-top-left-radius:4px;
+    transition: ease 0.2s
+}
+.back-top:hover, .back-top:focus, .back-top:active{color:#fff; text-decoration: none}
+.back-top:hover{transition:all ease-in-out 0.1s; background:#292d96}
+
+.hide-me{visibility: hidden; opacity: 0} /* usado para esconder o botao de voltar ao topo */
+
+
+/* =TYPOGRAPHY
+ */
+
+h1, h2, h3 { font-family: 'Federo', sans-serif; }
+h4, h5, h6 { font-weight: 300; }
+
+h1 { font-size: 2em; line-height: 1.15em }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.4em; }
+h6 { font-size: 1.3em; }
+
+p { margin-top: 0; margin-bottom: 1.6em; font-size: 1.3em; line-height: 1.4em; font-weight: 300; color: #333 }
+p:last-child { margin-bottom: 0 }
+
+a { transition: all ease 0.15s }
+
+a[href^="tel:"], a[href^="mailto:"] { color: #909090; }
+a[href^="tel:"]:hover, a[href^="mailto:"]:hover { color: #292d96; text-decoration: none }
+
+
+/* =NAV
+*/
+
+nav { font-family: "Roboto Sans" sans-serif;  }
+
+nav ul { margin-top: 12px;  padding: 0 }
+nav li { padding-right: 10px; display: inline-block; }
+nav a { position: relative; color: #fff; font-weight: 300; transition: all ease 0.25s; z-index: 2 }
+nav a:hover { color: skyblue; text-decoration: none }
+
+nav a:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom:  0;
+    left: 0;
+    background-color: skyblue;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 2px;
+}
+
+nav a:hover:after { width: 100%; visibility: visible; }
+
+@media (max-width:767px){
+    nav ul{max-height: 0; overflow: hidden; transition: linear 0.2s}
+    nav li{display: block; text-align: left; border-bottom: 1px dashed rgba(0,0,0,0.2)}
+    nav a{ display: block; padding: 10px;}
+    nav a:after { display: none}
+
+    .btn-toggle-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding:14px 29px 28px 11px;
+        background: #fff;
+        border-bottom-right-radius: 100px;
+        z-index: 1
+    }
+
+    .bar{display: block; margin:3px 0; width: 24px; height: 3px; background:#292d96; transition: linear 0.2s}
+
+    .bar-close .bar:nth-child(1) {-webkit-transform:rotate(45deg) translate(5px,4px); transform: rotate(45deg) translate(5px,4px)}
+    .bar-close .bar:nth-child(2) {visibility: hidden; opacity: 0}
+    .bar-close .bar:nth-child(3) {-webkit-transform:rotate(-45deg) translate(4px,-4px); transform: rotate(-45deg) translate(4px,-4px)}
+}
+
+
+/* =FOOTER
+ */
+
+footer { margin: 0 auto; padding:70px 0;  width: 90%; background: #ededed; border-top-left-radius: 4px; border-top-left-radius: 4px }
+
+@media (max-width:870px){
+    footer { padding: 46px 0 46px 20px }
+}
+
+footer p{ font-size: 0.85em; color: #8f8f8f; font-weight: 400 }
+footer h4 { color: #8f8f8f; margin-bottom: 25px }
+
+footer a { position: relative; color: #8f8f8f; font-size: 0.85em }
+footer a:hover { color: #292d96; text-decoration: none; }
+
+footer a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #292d96;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    z-index: 0;
+    border-radius: 2px;
+}
+
+footer a:hover:before { width: 100%; visibility: visible; }
+
+.footer-bottom { clear:both; margin:0 auto 56px auto; padding:8px 0 10px 0; width: 90%; background:#e5e5e5; font-size:0.85em!important; color:#909090; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px }
+
+
+/* =Animated Scroll - Made by Mary Lou from Tympanus.net
+*/
+
+.cbp-so-scroller { overflow: hidden; }
+
+/* Sides */
+.cbp-so-side {
+	width: 50%;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	min-height: 12em;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Initial state (hidden or anything else) */
+.cbp-so-init .cbp-so-side { opacity: 0; }
+
+.cbp-so-init .cbp-so-side-left {
+	-webkit-transform: translateX(-80px);
+	-moz-transform: translateX(-80px);
+	transform: translateX(-80px);
+}
+
+.cbp-so-init .cbp-so-side-right {
+	-webkit-transform: translateX(80px);
+	-moz-transform: translateX(80px);
+	transform: translateX(80px);
+}
+
+/* Animated state */
+/* add you final states (transition) or your effects (animations) for each side */
+.cbp-so-section.cbp-so-animate .cbp-so-side-left,
+.cbp-so-section.cbp-so-animate .cbp-so-side-right {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+	opacity: 1;
+}
