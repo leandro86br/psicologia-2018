@@ -10,14 +10,29 @@
 
 <link rel="icon" href="img/favicon.png">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+      crossorigin="anonymous">
+      
 <link rel="stylesheet" href="css/custom.css">
 
 <title>Entendendo a Psicoterapia</title>
 
 </head>
 
-<body class="animated fadeIn">
+<body>
+
+<!-- load screen
+******************************************************************* -->
+
+<div id="load">
+    <div class="loading-face"></div>
+    <div class="centralized-text text-center">
+
+        <img src="img/logo.svg" width="300" alt="">
+    </div>
+</div>
 
 
 <!-- BTN NAV MOBILE
@@ -41,7 +56,7 @@
        
        <!-- LOGO -->
         <div class="col-md-8 text-center text-md-left">
-            <a href="index.html"><img src="img/icons/logo.svg" width="300" class="img-fluid" alt=""></a>
+            <a href="index.html"><img src="img/logo.svg" width="300" class="img-fluid" alt=""></a>
             
             <!-- NAV -->
             <nav>
@@ -83,7 +98,7 @@
 <!-- CONTENT
 ******************************************************************* -->
 
-<section id="cbp-so-scroller" class="cbp-so-scroller">
+<main id="cbp-so-scroller" class="cbp-so-scroller">
   <div class="container padding-content">
    
     <div class="row align-items-center cbp-so-section">
@@ -156,7 +171,7 @@
     <div class="space"></div>
     
     <div class="row cbp-so-section">
-        <div class="col-md-6 cbp-so-side cbp-so-side-left">
+        <div class="col-12 col-md-6 cbp-so-side cbp-so-side-left">
             <p class="text-center d-none d-md-block"><img src="img/icons/time.svg" width="160" alt=""></p>
             <h2 class="text-blue">Quanto tempo dura uma psicoterapia?</h2>
             <br>
@@ -165,7 +180,7 @@
         </div>
         
         
-        <div class="col-md-6 cbp-so-side cbp-so-side-right">
+        <div class="col-12 col-md-6 cbp-so-side cbp-so-side-right">
             <p class="text-center d-none d-md-block"><img src="img/icons/back-to-back.svg" width="280" alt=""></p>
             <h2 class="text-blue">Quem pode fazer psicoterapia?</h2>
             <br>
@@ -222,7 +237,7 @@
             (a capacidade de o indiv&iacute;duo lidar com problemas, superar obst&aacute;culos ou resistir &agrave; press&atilde;o de
             situa&ccedil;&otilde;es adversas sem entrar em surto psicol&oacute;gico) e com isso melhorar a qualidade de vida.</p>
             
-            <p><a href="curriculo.html" class="btn btn-success btn-sm text-uppercase">veja meu curr&iacute;culo</a></p>
+            <p><a href="curriculo.html" class="btn btn-primary btn-sm js-btn-load">Veja meu Curr&iacute;culo <span><img src="img/icons/arrow-right.svg" width="13" alt=""></span></a></p>
         </div>
         
         <div class="col-lg-1 d-none d-lg-block"></div>
@@ -232,7 +247,7 @@
         </div>
     </div><!-- ROW -->
   </div><!-- CONTAINER -->
-</section>
+</main>
 
 
 
@@ -281,7 +296,7 @@
 
         <div class="col col-xl-3 text-left text-xl-right">
             <br><br>
-            <img src="img/icons/logo-footer-2.svg" width="240" class="img-fluid" alt="">
+            <img src="img/logo-footer-2.svg" width="240" class="img-fluid" alt="">
         </div><!-- col -->
 
     </div><!-- row -->
@@ -291,11 +306,12 @@
 <div class="footer-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-md-right">
+     <div class="col">
+         Psicologia e Vida Saudável
+     </div>
+      <div class="col text-md-right">
         <span>
-          <i class="fa fa-code"></i>
-          &lt; &gt;  <a href="mailto:leandro.zambelli@yahoo.com" target="_blank">Leandro.Zambelli@yahoo.com</a> &lt; / &gt;
-          <i class="fa fa-code"></i>
+          &lt; &gt;  <a href="http://lzbl.com.br/" target="_blank">Feito por LZBL</a> &lt; / &gt;
         </span>
       </div><!-- col -->
     </div><!-- row -->
@@ -306,12 +322,24 @@
     &#94;
 </a>
 
+<script>
+    
+    function getDiv(){
+        document.getElementById('load').classList.add('loading');
+        document.getElementById('load').style.display = 'block';
+    }
+    
+    document.addEventListener("DOMContentLoaded", getDiv);
+    
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        
-<script src="js/functions.js"></script>
-<script src="js/cbpScroller.js"></script>
+
+<script src="js/animation.js" async defer></script>
+<script src="js/functions.js" async defer></script>
+<script src="js/cbpScroller.js" async defer></script>
 <script>new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );</script>
 
 </body>

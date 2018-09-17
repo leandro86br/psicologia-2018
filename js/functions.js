@@ -1,5 +1,4 @@
-/*
-    Author: Leandro.Zambelli@yahoo.com
+/*    Leandro Zambelli
 */
 
 
@@ -59,7 +58,7 @@ function backTop(){
          event.preventDefault();
          $('html, body').stop().animate({
              scrollTop: target.offset().top
-         }, 1000);
+         }, 600);
       }
   });
 }

@@ -1,36 +1,75 @@
-/*
-    Author Leandro.Zambelli@yahoo.com
+/*  Leandro Zambelli
  */
 
 
-@import url(https://fonts.googleapis.com/css?family=Federo);
+/* Colors:
 
-body { overflow-x: hidden !important }
+Blue            - header and titles:            #292d96
+Gradient        - background of title page:     #31349a and #e0b0f9
+Medium Gray     - Main Paragraph:               #444
+Light Gray      - Footer:                       #888
+Gray            - Footer Bottom:                #777
+
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Federo);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+body { 
+    overflow-x: hidden !important
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Custom scrollbar
+*/
+
+::-webkit-scrollbar{width: 12px}
+::-webkit-scrollbar-track{background:#292d96}
+::-webkit-scrollbar-thumb{background:#050742}
+
+
+/* Loading screen
+*/
+
+#load { display: none }
+
+.loading { position: fixed; width: 100%; height: 100%; background: #292d96; overflow: hidden; z-index: 2}
+.loading-face {position: absolute; width: 60px; height: 80px; background: #292d96; top: 50%; left: 50%; margin: -40px 0 0 -150px; z-index: 3}
+
+.centralized-text {width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) }
 
 
 /* =BOOTSTRAP RESET
  */
 
-.btn { padding:15px 50px 16px 50px; font-family: sans-serif;  }
-.btn-sm, .btn-group-sm > .btn { padding: 9px 35px 10px 35px; font-size: 0.875rem; }
+.btn { padding:15px 50px 16px 50px; position: relative;  }
+.btn-sm, .btn-group-sm > .btn { padding: 9px 35px 10px 35px; font-size: 0.9rem; border-radius: 100px }
 
-.btn-primary{background-color: hsl(243 49% 37%); border-color: hsl(243 49% 37%)}
-.btn-primary:hover{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 30%)}
-.btn-primary:focus, .btn-primary.focus{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 47%)}
-.btn-primary:active, .btn-primary.active{background-color: hsl(243 49% 30%); border-color: hsl(243 49% 47%)}
-
-
-/* =ANIMATION
-*/
-
-.animated { animation-duration: 1s; animation-fill-mode: both; }
-.fadeIn { animation-name: fadeIn; }
-
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.btn-primary { background-color: hsl(238 57% 37%); border-color: hsl(238 57% 37%); transition: all 0.2s ease  }
+.btn-primary span {
+    position: absolute;
+    top:-1px;
+    right: 18px;
+    width: 40px;
+    height: 42px;
+    padding-top: 8px;
+background: #0C0E5C;
+    opacity: 0;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transition: all 0.2s ease
 }
+.btn-primary:hover span { right: -18px; opacity: 1}
+
+.btn-primary:hover{background-color: hsl(238 57% 30%); border-color: hsl(238 57% 30%); }
+.btn-primary:hover{  padding-left: 30px}
+.btn-primary:focus, .btn-primary.focus{background-color: hsl(238 57% 30%); border-color: hsl(238 57% 47%)}
+.btn-primary:active, .btn-primary.active{background-color: hsl(238 57% 30%)!important; border-color: hsl(238 57% 47%)!important }
 
 
 /* =CLASSES
@@ -72,17 +111,22 @@ body { overflow-x: hidden !important }
 
 .back-top {
     font-size: 2em;
-    position:fixed;
-    bottom:0;
-    right:0;
-    padding:9px 25px 0px 27px;
-    background:#ddd;
-    color:#838383;
-    border-top-left-radius:4px;
+    position: fixed;
+    bottom: 0;
+    right: 4px;
+    padding: 9px 25px 0px 27px;
+    background: #292d96;
+    color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     transition: ease 0.2s
 }
-.back-top:hover, .back-top:focus, .back-top:active{color:#fff; text-decoration: none}
-.back-top:hover{transition:all ease-in-out 0.1s; background:#292d96}
+.back-top:hover, .back-top:focus, .back-top:active { color: #fff; text-decoration: none }
+.back-top:hover{transition: all ease-in-out 0.1s; background: #0C0E5C}
+
+@media(max-width:1100px){
+    .back-top { bottom: 38px; border-radius: 4px; padding-bottom: 4px }
+}
 
 .hide-me{visibility: hidden; opacity: 0} /* usado para esconder o botao de voltar ao topo */
 
@@ -100,10 +144,18 @@ h4 { font-size: 1.5em; }
 h5 { font-size: 1.4em; }
 h6 { font-size: 1.3em; }
 
-p { margin-top: 0; margin-bottom: 1.6em; font-size: 1.3em; line-height: 1.4em; font-weight: 300; color: #333 }
+main p {
+    font-family: "Lora", serif;
+    margin-top: 0;
+    margin-bottom: 1.6em;
+    font-size: 1.25em;
+    line-height: 1.4em;
+    color: #444;
+}
+
 p:last-child { margin-bottom: 0 }
 
-a { transition: all ease 0.15s }
+a { transition: all ease 0.15s; color: #4489e0 }
 
 a[href^="tel:"], a[href^="mailto:"] { color: #333; }
 a[href^="tel:"]:hover, a[href^="mailto:"]:hover { color: #292d96; text-decoration: none }
@@ -112,11 +164,10 @@ a[href^="tel:"]:hover, a[href^="mailto:"]:hover { color: #292d96; text-decoratio
 /* =NAV
 */
 
-nav { font-family: "Roboto Sans" sans-serif;  }
 
 nav ul { margin-top: 12px;  padding: 0 }
 nav li { padding-right: 10px; display: inline-block; }
-nav a { position: relative; color: #fff; font-weight: 300; transition: all ease 0.25s; z-index: 2 }
+nav a { position: relative; color: #fff; font-weight: 300; transition: all ease 0.25s; }
 nav a:hover { color: skyblue; text-decoration: none }
 
 nav a:after {
@@ -161,17 +212,21 @@ nav a:hover:after { width: 100%; visibility: visible; }
 /* =FOOTER
  */
 
-footer { margin: 0 auto; padding:70px 0;  width: 90%; background: #aaa; border-top-left-radius: 4px; border-top-left-radius: 4px }
+footer { margin: 0 auto; padding: 70px 0; background: #888; }
 
-@media (max-width:870px){
-    footer { padding: 46px 0 46px 20px }
+@media (min-width: 1351px){ 
+    footer { width: 90%; border-top-left-radius: 4px; border-top-left-radius: 4px }
 }
 
-footer p{ font-size: 0.85em; color: #fff; font-weight: 400 }
-footer h4 { position: relative; color: #fff; margin-bottom: 25px; font-weight: 400 }
+@media (max-width:870px){
+    footer { padding: 46px 0 46px 20px; }
+}
+
+footer p { font-size: 0.85em; color: #fff; font-weight: 400;}
+footer h4 { position: relative; color: #fff; margin-bottom: 25px; font-weight: 400; }
 
 footer a { position: relative; color: #fff; font-size: 0.85em }
-footer a:hover { color: #292d96; text-decoration: none; }
+footer a:hover { color: #ddd; text-decoration: none; }
 
 footer a:before {
     content: "";
@@ -180,7 +235,7 @@ footer a:before {
     height: 1px;
     bottom: -2px;
     left: 0;
-    background-color: #292d96;
+    background-color: #ddd;
     visibility: hidden;
     transition: all 0.3s ease-in-out 0s;
     z-index: 0;
@@ -190,11 +245,15 @@ footer a:before {
 footer a:hover:before { width: 100%; visibility: visible; }
 
 footer a[href^="tel:"], footer a[href^="mailto:"] { color: #fff; }
+footer a[href^="tel:"]:hover, footer a[href^="mailto:"]:hover { color: #ddd; }
 
-.footer-bottom { clear:both; margin:0 auto 56px auto; padding:8px 0 10px 0; width: 90%; background:#999; font-size:0.85em!important; color:#eee; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px }
+.footer-bottom { clear:both; padding:8px 0 10px 0; background:#777; font-size:0.85em!important; color:#fff; }
+.footer-bottom a{ color: #fff; }
+.footer-bottom a:hover { color: #ccc; }
 
-.footer-bottom a[href^="mailto:"] { color: #eee; }
-.footer-bottom a[href^="mailto:"]:hover { color: #ccc; }
+@media (min-width:1351px){
+    .footer-bottom {  margin:0 auto 56px auto; width: 90%; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+}
 
 
 /* =Animated Scroll - Made by Mary Lou from Tympanus.net

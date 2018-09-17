@@ -10,7 +10,11 @@
 
 <link rel="icon" href="img/favicon.png">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+      crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/custom.css">
 
 <title>Psicologia e Vida Saud&aacute;vel</title>
@@ -37,7 +41,18 @@
 
 </head>
 
-<body class="animated fadeIn">
+<body>
+
+<!-- load screen
+******************************************************************* -->
+
+<div id="load">
+    <div class="loading-face"></div>
+    <div class="centralized-text text-center">
+
+        <img src="img/logo.svg" width="300" alt="">
+    </div>
+</div>
 
 <!-- BTN NAV MOBILE
 ************************* -->
@@ -60,7 +75,7 @@
        
        <!-- LOGO -->
         <div class="col-md-8 text-center text-md-left">
-            <a href="index.html"><img src="img/icons/logo.svg" width="300" class="img-fluid" alt=""></a>
+            <a href="index.html"><img src="img/logo.svg" width="300" class="img-fluid" alt=""></a>
             
             <!-- NAV -->
             <nav>
@@ -114,7 +129,7 @@
 <!-- CONTENT
 ******************************************************************* -->
 
-<section>
+<main>
   <div class="container padding-content">
     <div class="row">
        
@@ -124,9 +139,13 @@
         
         <div class="col-md-1"></div>
         
-        <div class="col-lg-4">
-           <h2 class="text-blue">A Psicoterapia</h2>
-           <br>
+        <div class="col-lg-8">
+           <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-blue">A Psicoterapia</h2>
+                <br>
+            </div>
+            <div class="col-lg-6">
             <p>As vezes na vida, experimentamos
             sensa&ccedil;&otilde;es e emo&ccedil;&otilde;es que at&eacute; ent&atilde;o desconhec&iacute;amos ou n&atilde;o t&iacute;nhamos
             no&ccedil;&atilde;o de qu&atilde;o doloroso elas podem ser.</p>
@@ -135,10 +154,8 @@
             v&atilde;o dificultando certas atividades de nossa vida que antes faz&iacute;amos sem nenhum problema, v&atilde;o
             aos poucos nos apertando por dentro de uma forma que nos sentimos aprisionados de n&oacute;s mesmos, modificando
             certos comportamentos nossos e impossibilitando-nos de ter controle de nossa pr&oacute;pria vida.</p>
-        </div><!-- col -->
-    
-        <div class="col-lg-4">
-           <br><br><br>
+            </div>
+        <div class="col-lg-6">
             <p>Essas sensa&ccedil;&otilde;es e emo&ccedil;&otilde;es podem e devem ser tratados com algu&eacute;m preparado para
             cuidar da sa&uacute;de emocional, 
             este profissional &eacute; o Psic&oacute;logo.</p>
@@ -146,12 +163,16 @@
             <p>Grande &eacute; a duvida que envolve em fazer um tratamento com um psic&oacute;logo, ou no caso, uma psicoterapia e por isso
             me comprometi em responder algumas perguntas b&aacute;sicas sobre o assunto.</p>
             
-            <p><a href="entendendo-psicoterapia.html" class="btn btn-success btn-sm text-uppercase">saiba mais</a></p>
+            <p><a href="entendendo-psicoterapia.html" class="btn btn-primary btn-sm js-btn-load">Quero Saber Mais <span><img src="img/icons/arrow-right.svg" width="13" alt=""></span></a></p>
         </div><!-- col -->
+           </div> 
+        </div>
+        
+
         
     </div><!-- ROW -->
   </div><!-- CONTAINER -->
-</section>
+</main>
 
 
 <!-- FOOTER
@@ -199,7 +220,7 @@
 
         <div class="col col-xl-3 text-left text-xl-right">
             <br><br>
-            <img src="img/icons/logo-footer-2.svg" width="240" class="img-fluid" alt="">
+            <img src="img/logo-footer-2.svg" width="240" class="img-fluid" alt="">
         </div><!-- col -->
 
     </div><!-- row -->
@@ -209,11 +230,12 @@
 <div class="footer-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-md-right">
+     <div class="col">
+         Psicologia e Vida Saudável
+     </div>
+      <div class="col text-right">
         <span>
-          <i class="fa fa-code"></i>
-          &lt; &gt;  <a href="mailto:leandro.zambelli@yahoo.com" target="_blank">Leandro.Zambelli@yahoo.com</a> &lt; / &gt;
-          <i class="fa fa-code"></i>
+          &lt; &gt;  <a href="http://lzbl.com.br/" target="_blank">Feito por LZBL</a> &lt; / &gt;
         </span>
       </div><!-- col -->
     </div><!-- row -->
@@ -223,12 +245,23 @@
 <a href="#home" class="back-top hide-me text-center">
     &#94;
 </a>
+<script>
+    
+    function getDiv(){
+        document.getElementById('load').classList.add('loading');
+        document.getElementById('load').style.display = 'block';
+    }
+    
+    document.addEventListener("DOMContentLoaded", getDiv);
+    
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        
-<script src="js/functions.js"></script>
+
+<script src="js/animation.js" async defer></script>
+<script src="js/functions.js" async defer></script>
 
 </body>
 </html>
